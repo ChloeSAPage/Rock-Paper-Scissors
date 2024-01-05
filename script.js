@@ -11,5 +11,9 @@ else{
     console.log("User = ", userChoice)
 }
 
+// get bot choice
+const options = ["rock", "paper", "scissors"];
+var random = Math.floor(Math.random() * options.length);
+var botChoice = options[random]
 
-
+console.log("Bot = ", botChoice)

@@ -26,17 +26,16 @@ function playRound(userChoice, botChoice) {
 
         // another round
         //var userChoice = prompt("Rock, Paper or Scissors?");
-        var userChoice = "scissors";
-
+        var userChoice = "rock";
 
         if (userChoice === null) {
             console.log("I guess you lose!");
+            return "lost"
         }
 
         else {
-            console.log("You chose", userChoice);
             var botChoice = getComputerChoice();
-            playRound(userChoice, botChoice);
+            return playRound(userChoice, botChoice); // recursion
         }
     }
 
@@ -57,13 +56,17 @@ function getComputerChoice() {
 // Game
 
 function game() {
-    var i = 0;
+    var i = 1;
     var userScore = 0;
     var botScore = 0;
 
-    while (i < 5) {
+    while (i <= 5) {
+        console.log(`Round ${i}!`);
         var botChoice = getComputerChoice();
+        //var userChoice = prompt("Rock, Paper or Scissors?");
+        var userChoice = "rock";
         var result = playRound(userChoice, botChoice);
+
         if (result === "won") {
             userScore = userScore + 1;
         }
@@ -71,15 +74,26 @@ function game() {
         else if (result === "lost") {
             botScore = botScore + 1;
         }
+
         console.log(`Your score is ${userScore}`);
         console.log(`The Bot's score is ${botScore}`);
         i++;
     }
+
+    if (userScore > botScore) {
+        console.log("The winner is...YOU!")
+    }
+    else if (botScore > userScore) {
+        console.log("The winner is...THE BOT")
+    }
+    else{
+        console.log("It's a draw!")
+    }
+
 }
 
 // Get user's choice
 
-//var userChoice = prompt("Rock, Paper or Scissors?");
 var userChoice = "scissors";
 
 if (userChoice === null) {

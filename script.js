@@ -11,32 +11,41 @@ else {
     console.log("You chose", userChoice);
 
     // get bot choice
-    const options = ["rock", "paper", "scissors"];
-    var random = Math.floor(Math.random() * options.length);
-    var botChoice = options[random];
+    function getComputerChoice() {
+        const options = ["rock", "paper", "scissors"];
+        var random = Math.floor(Math.random() * options.length);
+        var botChoice = options[random];
+        console.log("The Bot chose", botChoice);
+        return botChoice
+    }
 
-    console.log("The Bot chose", botChoice);
+    var botChoice = getComputerChoice()
 
     // Determine who won
     // Paper > Rock
     // Rock > Scissors
     // Scissors > Paper
 
-    if (botChoice === "paper" && userChoice === "rock") {
-        console.log("You lose!");
-    }
-    else if (botChoice === "rock" && userChoice === "scissors") {
-        console.log("You lose!");
-    }
-    else if (botChoice === "scissors" && userChoice === "paper") {
-        console.log("You lose!");
-    }
+    function play(userChoice, botChoice) {
 
-    else if (botChoice === userChoice) {
-        console.log("It's a draw!")
-    }
+        if (botChoice === "paper" && userChoice === "rock") {
+            console.log("You lose!");
+        }
+        else if (botChoice === "rock" && userChoice === "scissors") {
+            console.log("You lose!");
+        }
+        else if (botChoice === "scissors" && userChoice === "paper") {
+            console.log("You lose!");
+        }
 
-    else {
-        console.log("You win!");
+        else if (botChoice === userChoice) {
+            console.log("It's a draw!")
+        }
+
+        else {
+            console.log("You win!");
+        }
     }
 }
+
+play()

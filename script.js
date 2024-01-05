@@ -24,8 +24,8 @@ function playRound(userChoice, botChoice) {
         console.log("It's a draw!");
 
         // another round
-        //var userChoice = prompt("Rock, Paper or Scissors?");
-        var userChoice = "rock";
+        var userChoice = prompt("Rock, Paper or Scissors?");
+        //var userChoice = "rock";
 
         if (userChoice === null) {
             console.log("I guess you lose!");
@@ -62,8 +62,8 @@ function game() {
     while (i <= 5) {
         console.log(`Round ${i}!`);
         var botChoice = getComputerChoice();
-        //var userChoice = prompt("Rock, Paper or Scissors?");
-        var userChoice = "rock";
+        var userChoice = prompt("Rock, Paper or Scissors?");
+        //var userChoice = "rock";
         var result = playRound(userChoice, botChoice);
 
         if (result === "won") {

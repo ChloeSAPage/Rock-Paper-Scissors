@@ -4,7 +4,6 @@
 // Scissors > Paper
 
 function playRound(userChoice, botChoice) {
-
     console.log("You chose", userChoice);
     console.log("The Bot chose", botChoice);
 
@@ -77,6 +76,7 @@ function game() {
 
         console.log(`Your score is ${userScore}`);
         console.log(`The Bot's score is ${botScore}`);
+
         i++;
     }
 
@@ -86,7 +86,7 @@ function game() {
     else if (botScore > userScore) {
         console.log("The winner is...THE BOT")
     }
-    else{
+    else {
         console.log("It's a draw!")
     }
 

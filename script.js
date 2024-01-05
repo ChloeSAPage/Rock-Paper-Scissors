@@ -48,17 +48,20 @@ else {
     console.log("You chose", userChoice);
 
     var botChoice = getComputerChoice();
-    
+
     var result = play(userChoice, botChoice);
 
     if (result === "draw") {
         var userChoice = prompt("Rock, Paper or Scissors?");
-        console.log("You chose", userChoice);
-        var botChoice = getComputerChoice();
-        play(userChoice, botChoice);
 
         if (userChoice === null) {
             console.log("I guess you lose!");
+        }
+
+        else {
+            console.log("You chose", userChoice);
+            var botChoice = getComputerChoice();
+            play(userChoice, botChoice);
         }
 
     }
